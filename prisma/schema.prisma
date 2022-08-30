@@ -17,4 +17,13 @@ model Country {
     name String @unique
     abbreviation String @unique
     domain String @unique
+
+    continent Continent? @relation(fields: [continentId], references: [id])
+    continentId Int?
+}
+
+model Continent {
+    id Int @id @default(autoincrement())
+    name String @unique
+    countries Country[]
 }
