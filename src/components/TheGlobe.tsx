@@ -11,6 +11,12 @@ function polygonColour(country: Country) {
   return getColour(country);
 }
 
+function countryLabel(country: Country) {
+  const name = country.properties.ADMIN;
+  const label = `<b>${name}</b>`;
+  return label;
+}
+
 const TheGlobe = () => {
   const [countries, setCountries] = useState<Country[]>([]);
 
@@ -28,6 +34,9 @@ const TheGlobe = () => {
           polygonCapColor={polygonColour}
           polygonSideColor={() => 'rgba(0, 100, 0, 0.15)'}
           polygonStrokeColor={() => '#111'}
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          polygonLabel={countryLabel}
         />
       </div>
     </div>
