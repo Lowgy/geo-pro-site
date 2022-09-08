@@ -18,4 +18,8 @@ export default defineNextConfig({
   images: {
     domains: ['localhost', 'flagcdn.com'],
   },
+  env: {
+    TWITCH_CLIENT_ID: '5i8k6tg6klstxshq2q2yktyh4d27xu',
+    TWITCH_SECRET: 'g8wafxiobbca20z4h9v9qlq9shozdv',
+  },
 });
