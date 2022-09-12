@@ -1,12 +1,12 @@
 import type { NextPage } from 'next';
-import React from 'react';
+import React, { useState } from 'react';
 import { trpc } from '../utils/trpc';
 import CountryCard from '../components/CountryCard';
 import { FaSearch } from 'react-icons/fa';
 
 const CountriesPage: NextPage = () => {
   const { data, isLoading } = trpc.useQuery(['country.getAllCountries']);
-  const [inputText, setInputText] = React.useState<string>('');
+  const [inputText, setInputText] = useState<string>('');
 
   const handleSearch = (event: { target: { value: string } }) => {
     setInputText(event.target.value);

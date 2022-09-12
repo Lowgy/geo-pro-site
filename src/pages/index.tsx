@@ -1,12 +1,8 @@
 import type { NextPage } from 'next';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
-type Streamer = {
-  id: string;
-  user_id: string;
-  user_name: string;
-};
+import { Streamer } from '../utils/types/streamer';
+import StreamCard from '../components/StreamCard';
 
 const Home: NextPage = () => {
   const [streams, setStreams] = useState<Streamer[]>([]);
@@ -54,12 +50,7 @@ const Home: NextPage = () => {
         expect much... yet!
         {streams.length !== 0
           ? streams?.map((stream) => (
-              <iframe
-                key={stream.id}
-                src={`https://player.twitch.tv/?channel=${stream.user_name}&parent=localhost&muted=true&autoplay=false`}
-                height="720"
-                width="1280"
-              ></iframe>
+              <StreamCard streamer={stream} key={stream.id} />
             ))
           : ''}
       </h1>
