@@ -16,7 +16,7 @@ export default defineNextConfig({
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['localhost', 'flagcdn.com'],
+    domains: ['localhost', 'flagcdn.com', 'cdn.ko-fi.com'],
   },
   env: {
     TWITCH_CLIENT_ID: process.env.TWITCH_CLIENT_ID,

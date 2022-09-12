@@ -5,6 +5,7 @@ import type { AppType } from 'next/dist/shared/lib/utils';
 import superjson from 'superjson';
 import '../styles/globals.css';
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
